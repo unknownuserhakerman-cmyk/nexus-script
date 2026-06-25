@@ -42,3 +42,24 @@ async function activateKey() {
 }
 
 window.activateKey = activateKey;
+const KEYS = {
+  
+  // NORMAL ACCESS ($7)
+  "NEXUS-NR1A9K2QX": "normal",
+  "NEXUS-NR2B8L7WZ": "normal",
+  "NEXUS-NR3C5P9TY": "normal",
+  "NEXUS-NR4D1V6KM": "normal",
+  "NEXUS-NR5E7X3QJ": "normal",
+
+  // PREMIUM ACCESS ($20)
+  "NEXUS-PR1X9K2QZ": "premium",
+  "NEXUS-PR2Y8L7WX": "premium",
+  "NEXUS-PR3Z5P9TY": "premium",
+  "NEXUS-PR4A1V6KM": "premium",
+  "NEXUS-PR5B7X3QJ": "premium",
+
+  // LIFETIME ACCESS
+  "NEXUS-LT1A9K2QX": "lifetime",
+  "NEXUS-LT2B8L7WZ": "lifetime",
+  "NEXUS-LT3C5P9TY": "lifetime"
+};
