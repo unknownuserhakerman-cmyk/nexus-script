@@ -63,3 +63,49 @@ const KEYS = {
   "NEXUS-LT2B8L7WZ": "lifetime",
   "NEXUS-LT3C5P9TY": "lifetime"
 };
+
+const USED = JSON.parse(localStorage.getItem("nexus_used") || "{}");
+
+function getDeviceId() {
+  let id = localStorage.getItem("nexus_device");
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem("nexus_device", id);
+  }
+  return id;
+}
+
+function activateKey() {
+  const input = document.getElementById("keyInput").value.trim();
+  const status = document.getElementById("status");
+
+  const device = getDeviceId();
+  const type = KEYS[input];
+
+  if (!type) {
+    status.innerText = "❌ Invalid key";
+    return;
+  }
+
+  if (USED[input] && USED[input] !== device) {
+    status.innerText = "❌ Key already used on another device";
+    return;
+  }
+
+  USED[input] = device;
+  localStorage.setItem("nexus_used", JSON.stringify(USED));
+
+  if (type === "normal") {
+    status.innerText = "✅ Normal Access Granted ($7)";
+  }
+
+  if (type === "premium") {
+    status.innerText = "🔥 Premium Access Granted ($20)";
+    document.body.classList.add("premium");
+  }
+
+  if (type === "lifetime") {
+    status.innerText = "💎 Lifetime Access Granted";
+    document.body.classList.add("lifetime");
+  }
+}
