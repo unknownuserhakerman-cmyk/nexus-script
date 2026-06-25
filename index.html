@@ -1,95 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NEXUS-SCRIPTS</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="bg-overlay"></div>
-
 <header class="header">
-  <div class="logo-wrap">
-    <img src="assets/nexus-logo.svg" class="logo"/>
-    <h1>NEXUS-SCRIPTS</h1>
-  </div>
-
-  <nav>
-    <a href="#pricing">Pricing</a>
-    <a href="#activate">Activate</a>
-    <a href="#payment">Payment</a>
-
-    <a class="tiktok-btn" href="https://www.tiktok.com/@nexusnetlify" target="_blank">
-      TikTok
-    </a>
-  </nav>
+  <div class="logo">NEXUS-SCRIPTS</div>
 </header>
 
 <section class="hero">
-  <h2>PREMIUM ACCESS. MAX PERFORMANCE.</h2>
-  <p>Unlock elite gaming scripts with secure key-based authentication and device binding protection.</p>
-
-  <button class="big-btn" onclick="tiktokFlow()">
-    GET KEY VIA TIKTOK
-  </button>
+  <h1>Script Hub Access</h1>
 </section>
 
-<section id="pricing" class="pricing">
-  <div class="card">Daily Key<br><span>$2.99</span><p>24 Hour Access</p></div>
-  <div class="card">Monthly Key<br><span>$9.99</span><p>30 Day Access</p></div>
-  <div class="card">Lifetime Key<br><span>$24.99</span><p>Permanent Access</p></div>
-</section>
-
-<section id="payment" class="payment">
-  <h3>Payment Methods</h3>
-  <div class="methods">
-    <div>Crypto</div>
-    <div>PayPal</div>
-    <div>CashApp</div>
-  </div>
-</section>
-
-<section id="activate" class="activate">
-  <h3>Key Activation</h3>
-
-  <input id="keyInput" placeholder="Enter your key..." />
-  <button onclick="activateKey()">ACTIVATE KEY</button>
-
+<section>
+  <h2>Activate Key</h2>
+  <input id="keyInput" placeholder="Enter key...">
+  <button onclick="activateKey()">Activate</button>
   <p id="status"></p>
 </section>
 
-<script src="firebase-config.js"></script>
+<section>
+  <h2>Search Scripts</h2>
+  <input id="gameInput" placeholder="Game name">
+  <button onclick="searchScript()">Search</button>
+  <pre id="result"></pre>
+</section>
+
 <script src="app.js"></script>
-</body>
-</html>                    <p>Logged in as: <span id="userEmail"></span></p>
-                    <button class="logout-btn" onclick="logoutUser()">Logout</button>
-                </div>
-
-                <input type="text" id="keyInput" placeholder="Enter your key..." class="key-input" maxlength="32">
-                <button class="activate-button" onclick="activateKey()">ACTIVATE KEY</button>
-                
-                <div id="activationStatus" class="activation-status"></div>
-                
-                <div class="activation-history">
-                    <h3>Your Activations</h3>
-                    <div id="activationList" class="activation-list"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2026 NEXUS-SCRIPTS. All rights reserved.</p>
-            <p>Premium gaming scripts. Next-generation performance.</p>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="firebase-config.js"></script>
-    <script src="app.js"></script>
 </body>
 </html>
